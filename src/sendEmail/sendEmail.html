@@ -1,0 +1,30 @@
+<div class="welcome">
+  <h2>Send Email</h2>
+
+  <form ng-if="!$ctrl.submitted" method="post" name="send_email_form">
+    <p>
+      <i>Multiple recipients separated by comma.</i>
+    </p>
+
+    Email Address: <input type="text" multiple-emails required ng-model="$ctrl.email" name="email"><br/>
+    <div class="error-msg" ng-if="send_email_form.email.$invalid">
+      Error: Email Address is invalid.
+    </div>
+
+    cc: <input type="text" multiple-emails ng-model="$ctrl.emailCc" name="email-cc"><br/>
+    <div class="error-msg" ng-if="send_email_form['email-cc'].$invalid">
+      Error: Email CC Address is invalid.
+    </div>
+
+    bcc: <input type="text" multiple-emails ng-model="$ctrl.emailBcc" name="email-bcc"><br/>
+    <div class="error-msg" ng-if="send_email_form['email-bcc'].$invalid">
+      Error: Email BCC Address is invalid.
+    </div>
+    
+    <input type="submit" value="Submit" ng-click="$ctrl.handleSubmit($event)">
+  </form>
+
+  <div ng-if="$ctrl.submitted">
+    {{::$ctrl.sentResponseText}}
+  </div>
+</div>
