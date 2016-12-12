@@ -7,7 +7,7 @@ Note: NodeJS 6+ is required.
 ## Start service
 1. go to /server folder
 2. Install dependencies `npm i`
-3. start service `npm start` open [http://localhost:3000](http://localhost:3000)
+3. start service `npm start` at [http://localhost:3000](http://localhost:3000)
 
 ## Start frontend
 1. Install dependencies `npm i`
