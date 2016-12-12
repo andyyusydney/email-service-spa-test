@@ -14,8 +14,8 @@ function sendEmail(emailParams) {
 	var data = {
 		from: from_who,
 		to: emailParams.recipient,
-		subject: 'Hello from Mailgun',
-		text: 'This is a test email.'
+		subject: emailParams.subject,
+		text: emailParams.body
 		//text: '' // fail the service
 	}
 	

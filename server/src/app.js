@@ -31,8 +31,10 @@ app.post('/send/email', function (req, res) { // send email
 	var sendParams = {
 		recipient: req.body.email,
 		cc: req.body['email-cc'],
-		bcc: req.body['email-bcc']
-	};
+		bcc: req.body['email-bcc'],
+		subject: req.body['email-subject'],
+		body: req.body['email-body'],
+	}
 	console.log('sendParams=', sendParams);
 
 	sendEmailMailGun(sendParams) // send via MailGun service

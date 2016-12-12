@@ -6,22 +6,35 @@
       <i>Multiple recipients separated by comma.</i>
     </p>
 
-    Email Address: <input type="text" multiple-emails required ng-model="$ctrl.email" name="email"><br/>
-    <div class="error-msg" ng-if="send_email_form.email.$invalid">
-      Error: Email Address is invalid.
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input type="text" class="form-control" id="inputEmail" placeholder="Email" multiple-emails required ng-model="$ctrl.email" name="email">
+      <span class="help-inline error-msg" ng-if="send_email_form.email.$invalid">Email Address is invalid</span>
     </div>
 
-    cc: <input type="text" multiple-emails ng-model="$ctrl.emailCc" name="email-cc"><br/>
-    <div class="error-msg" ng-if="send_email_form['email-cc'].$invalid">
-      Error: Email CC Address is invalid.
+    <div class="form-group">
+      <label for="inputEmailCc">CC</label>
+      <input type="text" class="form-control" id="inputEmailCc" placeholder="Email CC" multiple-emails ng-model="$ctrl.emailCc" name="email-cc">
+      <span class="help-inline error-msg" ng-if="send_email_form['email-cc'].$invalid">CC Address is invalid</span>
     </div>
 
-    bcc: <input type="text" multiple-emails ng-model="$ctrl.emailBcc" name="email-bcc"><br/>
-    <div class="error-msg" ng-if="send_email_form['email-bcc'].$invalid">
-      Error: Email BCC Address is invalid.
+    <div class="form-group">
+      <label for="inputEmailBcc">BCC</label>
+      <input type="text" class="form-control" id="inputEmailBcc" placeholder="Email BCC" multiple-emails ng-model="$ctrl.emailBcc" name="email-bcc">
+      <span class="help-inline error-msg" ng-if="send_email_form['email-bcc'].$invalid">BCC Address is invalid</span>
     </div>
-    
-    <input type="submit" value="Submit" ng-click="$ctrl.handleSubmit($event)">
+
+    <div class="form-group">
+      <label for="inputEmailSubject">Subject</label>
+      <input type="text" class="form-control" id="inputEmailSubject" placeholder="Subject" required ng-model="$ctrl.emailSubject" name="email-subject">
+      <span class="help-inline error-msg" ng-if="send_email_form['email-subject'].$invalid">Subject is required</span>
+    </div>
+
+    <div class="form-group">
+      <textarea class="form-control" id="inputEmailBody" rows="3" placeholder="Add a message" ng-model="$ctrl.emailBody" name="email-body"></textarea>
+    </div>
+
+    <button class="btn btn-default" type="submit" ng-click="$ctrl.handleSubmit($event)">Send</button>
   </form>
 
   <div ng-if="$ctrl.submitted">

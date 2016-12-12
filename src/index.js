@@ -1,7 +1,7 @@
 import angular from 'angular';
 import 'angular-ui-router';
 
-import 'angular/angular-csp.css';
+import 'bootstrap-css-only/css/bootstrap.min.css'
 import './index.scss';
 
 import sendEmailModule from './sendEmail/sendEmailModule';
@@ -25,12 +25,7 @@ angular.module('main', [
       .state('home', {
         url: '/',
         template: '<send-email></send-email>'
-      })
-      .state('submitted', {
-        url: '/submitted',
-        template: 'aaa'
       });
-
   });
 
 angular.element(function () {

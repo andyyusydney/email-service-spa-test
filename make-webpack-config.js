@@ -43,11 +43,11 @@ module.exports = function (options) {
     },
   ];
   var stylesheetLoaders = [
-    { test: /\.css$/, loaders: ['css-loader!postcss-loader'] },
     { test: /\.less$/, loaders: ['css-loader!postcss-loader!less-loader'] },
     { test: /\.styl$/, loaders: ['css-loader!postcss-loader!stylus-loader'] },
     { test: /\.scss$/, loaders: ['css-loader!postcss-loader!sass-loader?sourceMap'] },
     { test: /\.sass$/, loaders: ['css-loader!postcss-loader!sass-loader?sourceMap&indentedSyntax'] },
+    { test: /\.css$/, loaders: ['css-loader!postcss-loader'] },
   ];
 
   const alias = {};

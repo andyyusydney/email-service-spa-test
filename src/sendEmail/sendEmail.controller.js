@@ -8,7 +8,7 @@ export default class WelcomeController {
     e.preventDefault();
     console.log('handleSubmit called');
 
-    console.log('email=%s, emailCc=%s, emailBcc=%s', this.email, this.emailCc, this.emailBcc);
+    console.log('email=%s, emailCc=%s, emailBcc=%s, emailSubject=%s, emailBody=%s', this.email, this.emailCc, this.emailBcc, this.emailSubject, this.emailBody);
 
     if (this.email) {
       this.$http({ // TODO: move to service
@@ -17,7 +17,9 @@ export default class WelcomeController {
         data: {
           'email': this.email,
           'email-cc': this.emailCc || '',
-          'email-bcc': this.emailBcc || ''
+          'email-bcc': this.emailBcc || '',
+          'email-subject': this.emailSubject,
+          'email-body': this.emailBody,
         }
       }).then((response) => { // success
         this.submitted = true;

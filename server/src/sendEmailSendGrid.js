@@ -23,7 +23,7 @@ function sendEmail(emailParams) {
         personalizations: [
             {
                 to: getRecipientsArray(emailParams.recipient.split(',')),
-                subject: 'Hello World from the SendGrid Node.js Library!',
+                subject: emailParams.subject,
             },
         ],
         from: {
@@ -32,7 +32,7 @@ function sendEmail(emailParams) {
         content: [
             {
                 type: 'text/plain',
-                value: 'Hello, Email!',
+                value: emailParams.body,
             },
         ],
     };
